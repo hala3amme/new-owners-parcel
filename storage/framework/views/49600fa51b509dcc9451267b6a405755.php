@@ -1,0 +1,1 @@
+<hr class="border-t border-gray-50" /><?php /**PATH /Users/ambrosetemidayobako/Desktop/Dev/web/glover/resources/views/components/hr.blade.php ENDPATH**/ ?>
