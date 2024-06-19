@@ -1,0 +1,53 @@
+{
+    "name": "beste/latlon-geohash",
+    "type": "library",
+    "description": "Gustavo Niemeyer's geocoding system",
+    "keywords": ["geohash", "geocoding"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jérôme Gamez",
+            "email": "jerome@gamez.name"
+        }
+    ],
+    "require": {
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
+    },
+    "require-dev": {
+        "phpstan/extension-installer": "^1.3.1",
+        "phpstan/phpstan": "^1.10.44",
+        "phpstan/phpstan-phpunit": "^1.3.15",
+        "phpstan/phpstan-strict-rules": "^1.5.2",
+        "phpunit/phpunit": "^10.4.2"
+    },
+    "autoload": {
+        "files": ["src/Geohash.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Beste\\Geohash\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "analyse": [
+            "XDEBUG_MODE=off vendor/bin/phpstan"
+        ],
+        "analyze": "@analyse",
+        "test": [
+            "@analyse",
+            "@test-units"
+        ],
+        "test-units": [
+            "vendor/bin/phpunit"
+        ],
+        "test-coverage": [
+            "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text"
+        ]
+    }
+}
